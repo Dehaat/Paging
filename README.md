@@ -2,6 +2,14 @@
 
 Android library for creating simple pagination functionality (infinite scrolling) upon RecyclerView.
 
+### Why aren't we using the Google Paging Library?
+
+Paging library by Google restricts the return type of the object in th callback to List<Any>. This raises 2 issues for us:
+
+1. To update our UI according to the response code or HTTP failures, we need to use interfaces that will pass the relevant information.
+	
+2. In case our API does not return only list but other keys as well,for example, an overall count of total items, or total pages, we need to again use interfaces to use or display that information in view component.
+
 ### Features
 
 1.  Configuration allows you to setup automatic adding/removing of the loading list item (disabled by default)
