@@ -82,10 +82,11 @@ class RecyclerPaginate internal constructor(
                 }
             }
             if (scrollToTop != null) {
-                scrollToTop.visibility = if (firstVisibleItemPosition == 0) {
-                    View.GONE
-                } else
-                    View.VISIBLE
+                scrollToTop.visibility =
+                    if (totalItemCount == 0 || firstVisibleItemPosition == 0) {
+                        View.GONE
+                    } else
+                        View.VISIBLE
             }
         }
     }
